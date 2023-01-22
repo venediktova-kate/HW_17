@@ -1,11 +1,5 @@
-# create_data.py
-
-# чтобы создать БД с данными 
-
-from flask import Flask, request
-from flask_restx import Api, Resource
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from marshmallow import Schema, fields
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -36,6 +30,7 @@ class Genre(db.Model):
     __tablename__ = 'genre'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
+
 
 db.drop_all()
 db.create_all()
