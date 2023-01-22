@@ -117,7 +117,7 @@ class DirectorsView(Resource):
         return "Director created", 201
 
 
-@director_ns.route("/<int: did>")
+@director_ns.route("/<int:did>")
 class DirectorViews(Resource):
     def get(self, did: int):
         director = db.session.query(Director).get(did)
@@ -158,7 +158,7 @@ class GenresView(Resource):
         return "Genre created", 201
 
 
-@genre_ns.route("/<int: gid>")
+@genre_ns.route("/<int:gid>")
 class GenreViews(Resource):
     def get(self, gid: int):
         genre = db.session.query(Genre).get(gid)
